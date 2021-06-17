@@ -208,16 +208,13 @@ Its faster than ls -1f by about 6x on a folder containing 1 million files. Note 
 [Solution - diskus](https://github.com/sharkdp/diskus)
 
 Other solution is gdu
-
 ```
-$ curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
-
-$ chmod +x gdu_linux_amd64
-
-$ Move gdu_linux_amd64 to home path and call the following command from path you want file size. 
-
-$ ~/gdu_linux_amd64 
-
+curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
+chmod +x gdu_linux_amd64
+```
+Move gdu_linux_amd64 to home path and call the following command from path you want file size. 
+```
+~/gdu_linux_amd64 
 ```
 
 Both these tools are faster than ncdu (my previous choice to get faster than du)
