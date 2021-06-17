@@ -219,6 +219,36 @@ Move gdu_linux_amd64 to home path and call the following command from path you w
 
 Both these tools are faster than ncdu (my previous choice to get faster than du)
 
+### Fast Commands with gnu parallel installed (https://anaconda.org/conda-forge/parallel)
+
+You will save a lot of time with this!!!
+
+#### Convert jpeg to png in a path with parallel
+Slow command
+```
+for i in *jpeg; do convert $i $i.png ; done
+```
+Fast command with parallel 
+```
+find . -name "*jpeg" | parallel -I% --max-args 1 convert % %.png
+```
+
+#### Run a bunch of commands - Keep all commands disjoint (any command should not depend on output of previous command)
+Say you have k cores on a machine, create a file called - jobs.txt or something
+Sample jobs.txt
+```
+command1
+command2
+command3
+command4
+and so on
+```
+
+Now with k cores run the jobs.txt file (try to run with k-1 commands in parallel)
+```
+parallel -- jobs k-1 < jobs.txt
+```
+
 
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
