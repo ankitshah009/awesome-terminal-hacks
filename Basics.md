@@ -6,4 +6,6 @@
 
 [90 frequently used sysadmin commands](https://haydenjames.io/90-linux-commands-frequently-used-by-linux-sysadmins/)
 
+[37 important Linux Commands you should know](https://www.howtogeek.com/412055/37-important-linux-commands-you-should-know/)
+
 
