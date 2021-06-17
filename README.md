@@ -192,6 +192,17 @@ awk 'BEGIN {FS="[^a-zA-Z]+" } { for (i=1; i<=NF; i++) words[tolower($i)]++ } END
 ls *.WAV | awk '{ printf("mv \"%s\" \"%s\"\n", $0, tolower($0)) }'
 ```
 
+#### Add line number before lines in a file
+```
+awk '{ print FNR ". " $0 ;next}{print}' file1
+```
+
+#### Speed up listing of files in a path consisting of many many files. (difference noticable after 50k files with standard ls command) 
+```
+ls -1f <your path>
+```
+For adventerous folks - compile this c code - https://github.com/ChristopherSchultz/fast-file-count
+Its faster than ls -1f by about 6x on a folder containing 1 million files. Note - speedup depends on many factors such as your kernel version, operating version, gcc version -- but definitely the fast-file-count c code is faster. I have it in my home path always. 
 
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
