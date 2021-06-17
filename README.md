@@ -221,7 +221,7 @@ Both these tools are faster than ncdu (my previous choice to get faster than du)
 
 ### Fast Commands with gnu parallel installed (https://anaconda.org/conda-forge/parallel)
 
-You will save a lot of time with this!!!
+You will save a lot of time with this!!! Use parallel with rm with caution. I messed up a linux system due to this error on my personal laptop once. 
 
 #### Convert jpeg to png in a path with parallel
 Slow command
@@ -254,6 +254,11 @@ parallel -- jobs k-1 < jobs.txt
 parallel -j10 cp {} output_path/ ::: *
 ```
 
+#### Parallel calling with a bash script
+Your bash script should have a command per line - for each file. This saves a LOT of time!!! 
+```
+parallel -a your-script-here.sh
+```
 
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
