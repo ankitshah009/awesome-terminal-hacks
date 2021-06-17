@@ -1,5 +1,6 @@
 # awesome-terminal-hacks
 A repository consisting of useful commands required in daily tasks to reduce stackoverflow searches. 
+
 Just click on the right of the codeblock to copy the command and use it directly in your work. 
 
 ## Task 
