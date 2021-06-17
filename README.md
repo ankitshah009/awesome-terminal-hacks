@@ -82,6 +82,25 @@ comm -13 <(sort file1) <(sort file2)
 ```
 Ignore case in comm command by passing comm -i 
 
+#### Get unique lines in your file (sort if not sorted)
+```
+sort file1 | uniq 
+```
+
+#### Get number of times unique lines appear in a file (sort if not sorted)
+```
+sort file1 | uniq -c 
+```
+
+#### Only print the repeated lines once in a file. (sort if not sorted) (basically count > 1 lines)
+```
+sort file1 | uniq -d 
+```
+
+#### Only print the lines which are not repeated in a file. (sort if not sorted) (basically count == 1 lines)
+```
+sort file1 | uniq -u
+```
 
 # Note
 If you know a better way to do the tasks - create a pull request for the repository. 
