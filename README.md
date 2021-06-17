@@ -6,12 +6,22 @@ Just click on the right of the codeblock to copy the command and use it directly
 
 #### Find the list of all extensions in a folder and subdirectories.
 ``` 
-Command : find . -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
+find . -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
 ```
 
 #### Find the list of all extensions in a folder and its subdirectories with counts 
 ```
-Command : find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn
+find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn
+```
+
+#### Find files greater than a particular size in linux
+```
+ find . -type f -size +4G
+```
+
+#### find files less than a particular size in Linux
+```
+find . -type f -size -4G
 ```
 
 #### NVIDIA command - check the GPU resource usages
