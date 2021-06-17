@@ -255,7 +255,7 @@ parallel -j10 cp {} output_path/ ::: *
 ```
 
 #### Parallel calling with a bash script
-Your bash script should have a command per line - for each file. This saves a LOT of time!!! 
+Your bash script should have a command per line. This saves a LOT of time!!! 
 ```
 parallel -a your-script-here.sh
 ```
