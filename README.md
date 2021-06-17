@@ -260,6 +260,12 @@ Your bash script should have a command per line. This saves a LOT of time!!!
 parallel -a your-script-here.sh
 ```
 
+#### Speed up file transfer from pathA (source computer) to pathB (remote computer)
+Generate a transfer.log file in /tmp for all the folders/files from a source path you want to get copied
+```
+cat /tmp/transfer.log | parallel --will-cite -j 5 rsync -avzm --progress --relative --stats --safe-links --ignore-existing --human-readable {} dest_host:/data/ 
+```
+
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
