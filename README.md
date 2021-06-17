@@ -204,6 +204,25 @@ ls -1f <your path>
 For adventerous folks - compile this c code - https://github.com/ChristopherSchultz/fast-file-count
 Its faster than ls -1f by about 6x on a folder containing 1 million files. Note - speedup depends on many factors such as your kernel version, operating version, gcc version -- but definitely the fast-file-count c code is faster. I have it in my home path always. 
 
+#### du - is very slow - to get the filesize of a folder with many files - What to do?? 
+[Solution - diskus](https://github.com/sharkdp/diskus)
+
+Other solution is gdu
+
+```
+$ curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
+
+$ chmod +x gdu_linux_amd64
+
+$ Move gdu_linux_amd64 to home path and call the following command from path you want file size. 
+
+$ ~/gdu_linux_amd64 
+
+```
+
+Both these tools are faster than ncdu (my previous choice to get faster than du)
+
+
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
