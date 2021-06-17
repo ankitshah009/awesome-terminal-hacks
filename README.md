@@ -57,6 +57,31 @@ for f in *.mp4;do ffmpeg -i "$f" "${f%mp4}wav";done
 for file in */*; do echo $file; mv "$file" $(echo $file | sed 's/ /_/g'); done
 ```
 
+#### Quickly get sum of a file consisting of numbers 
+```
+awk 'BEGIN {FS=" "};{sum+=$NF} END {print sum}' <your file>
+```
+
+#### Common lines between 2 files in Linux
+```
+comm -12 <(sort file1) <(sort file2)
+```
+```
+grep -Fxf file1 file2
+```
+both grep and comm has same execution time roughly for relatively small txt files less than 50mb. Post that grep is better for larger files. 
+
+#### Get Lines unique to file1 in linux
+```
+comm -23 <(sort file1) <(sort file2)
+```
+
+#### Get lines unique to file2 in linux
+```
+comm -13 <(sort file1) <(sort file2)
+```
+Ignore case in comm command by passing comm -i 
+
 
 # Note
 If you know a better way to do the tasks - create a pull request for the repository. 
