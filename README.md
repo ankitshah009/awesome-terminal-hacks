@@ -38,4 +38,5 @@ tar cf - * | mbuffer -m 1024M | ssh user@host '(cd /home/path; tar xf -)'
 
 # Note
 If you know a better way to do the tasks - create a pull request for the repository. 
+
 Kindly star the repository/share it if this helps reduce your time to make searches/helps in your work. 
