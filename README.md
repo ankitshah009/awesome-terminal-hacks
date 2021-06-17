@@ -108,6 +108,89 @@ uniq -f 1 file1
 ```
 Note: above command is sample and can be used with previous commands in combination to get what you want from a particular field. 
 
+#### View range of lines from a file
+```
+sed -n '1,5p' file1
+```
+
+#### View full file except range from a file
+```
+sed '3,10d' file1
+```
+
+#### View non consecutive lines and ranges from a file - example below shows line 2-4 and 8-12
+```
+sed -n -e '2,4p' -e '8,12p' file1
+```
+
+#### Replace word1 by word2 in a file (use -i to overwrite file)
+```
+sed 's/word1/word2/g' file1
+```
+To ignore case of replacement
+```
+sed 's/word1/word2/gi' file1
+```
+
+#### Replace word1 by word2 in a range in a file - example for 5-10 lines replacement
+```
+sed '5,10 s/word1/word2/g' file1
+```
+
+#### dos2unix (if not available) - convert file format for unix with sed
+```
+sed -i 's/\r//' file1
+```
+
+#### In place replacement for word1 by word 2 with sed and backing up original 
+```
+sed -i'.orig' 's/word1/word2/gi' file1
+```
+
+#### Replace word1 by word2 only if word3 present in line - with sed
+```
+sed '/word3/ s/word1/word2/g' file1
+```
+
+#### Multiple substitutions in sed - inplace example
+```
+sed -i 's/word1/word2/gi;s/word3/word4/gi' file1
+```
+
+#### Print specific fields from a commands output - who can be any other command
+```
+who | awk '{print $1, $2}'
+```
+
+#### Omit fields when printing from a file into terminal
+```
+awk -F":" '{$2="";$3="";print}' file1
+```
+
+#### Remove empty lines from a file in linux
+```
+awk '/^[ \t]*$/{next}{print}' file1
+```
+
+#### Get number of fields on each line in a file
+```
+awk '{print NR,"-->",NF}' file1
+```
+
+#### Print all lines greater than a given length - in a file/echoed output
+```
+echo "Some long string...." | awk 'length($0) > 5'
+```
+
+#### Get word frequency in a document using awk
+```
+awk 'BEGIN {FS="[^a-zA-Z]+" } { for (i=1; i<=NF; i++) words[tolower($i)]++ } END { for (i in words) print i, words[i] }' file1
+```
+
+#### Rename all files in a path with awk - example *.WAV to *.wav
+```
+ls *.WAV | awk '{ printf("mv \"%s\" \"%s\"\n", $0, tolower($0)) }'
+```
 
 
 # Note
