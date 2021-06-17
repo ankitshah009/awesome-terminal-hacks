@@ -30,13 +30,37 @@ find . -type f -size -4G
 nvidia-smi && nvidia-smi pmon -c 1 | awk -F ' ' '{print $2}' | xargs -0 > t1 && export i=0; export l2="-"; while IFS='' read -r line;do if [[ "$i" -lt 2 || -z "$line" || "$line" == $l2 ]];then echo $i; else ps -p "$line" -o pid,vsz=MEMORY -o user,group=GROUP -o comm,args=ARGS | awk '{for ( x=1 ; x<=1 ; x++ ) { printf("%s\t",$x) } for (x=2;x<=2;x++) { if(NR>1) { printf("%13.2fMb\t",hr=$x/1024) } else { printf("\t%s\t",$x) } } for ( x=3 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }'; fi; i=$((i+1)) ;done < t1 && rm t1
 ```
 
+#### Perform operation on all files in a path -- example here is to remove _ from filenames
+```
+for FILENAME in *; do FILENAME1=${FILENAME#*_}; mv $FILENAME $FILENAME1; done 
+```
+Note - this above for loop can be used to do many stuff accordingly. Useful to have this in mind
+
+#### Swap columns in a file - can be modified as per your needs
+```
+awk 'BEGIN{FS=OFS=","}{$0=$2 FS $2 FS $1}1' <your comma delimited file>
+```
+Note - read awk documentation to perform lots of crazy commmands based on the above template. Learn awk - its very useful nifty tool and no installation needed on any Linux OS. 
+
 #### Copy fastest using tar
 ```
 tar cf - * | mbuffer -m 1024M | ssh user@host '(cd /home/path; tar xf -)'
 ```
 
+#### Extract wav audio files form an mp4 extension of video - crude way - more customization is possible. 
+```
+for f in *.mp4;do ffmpeg -i "$f" "${f%mp4}wav";done
+```
+
+#### Replace spaces with underscores -- very irritating to handle spaces in filenames -- easy tool to fix that so your code doesnt need to handle. 
+```
+for file in */*; do echo $file; mv "$file" $(echo $file | sed 's/ /_/g'); done
+```
+
 
 # Note
 If you know a better way to do the tasks - create a pull request for the repository. 
+
+Many of the commands here are created as per my needs and can be easily modified to ones suited task. 
 
 Kindly star the repository/share it if this helps reduce your time to make searches/helps in your work. 
