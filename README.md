@@ -269,6 +269,8 @@ cat /tmp/transfer.log | parallel --will-cite -j 5 rsync -avzm --progress --relat
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
-Many of the commands here are created as per my needs and can be easily modified to ones suited task. 
+Many of the commands here are created as per my needs and can be easily modified to ones suited task.
+
+This repository will be continuously updated over time. 
 
 Star the repository/share it if this helps reduce your time to make searches/helps in your work. 
