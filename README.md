@@ -249,6 +249,11 @@ Now with k cores run the jobs.txt file (try to run with k-1 commands in parallel
 parallel -- jobs k-1 < jobs.txt
 ```
 
+#### Parallel copy files in linux from a given path containing many files say with 10 cores 
+```
+parallel -j10 cp {} output_path/ ::: *
+```
+
 
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
