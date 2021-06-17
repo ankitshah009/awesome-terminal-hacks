@@ -102,9 +102,17 @@ sort file1 | uniq -d
 sort file1 | uniq -u
 ```
 
+#### Run uniq command on a given field (below command will run uniq only field 1 - useful in delimited files)
+```
+uniq -f 1 file1 
+```
+Note: above command is sample and can be used with previous commands in combination to get what you want from a particular field. 
+
+
+
 # Note
-If you know a better way to do the tasks - create a pull request for the repository. 
+If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
 Many of the commands here are created as per my needs and can be easily modified to ones suited task. 
 
-Kindly star the repository/share it if this helps reduce your time to make searches/helps in your work. 
+Star the repository/share it if this helps reduce your time to make searches/helps in your work. 
