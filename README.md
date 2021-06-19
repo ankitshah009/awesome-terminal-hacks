@@ -14,6 +14,10 @@ find . -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
 ```
 find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn
 ```
+Alternate command for symlinks too
+```
+find . -type d -exec echo dirs \; -o -type l -exec echo symlinks \; -o -type f -links +1 -exec echo hardlinks \; -o -type f -exec echo files \; | sort | uniq -c
+```
 
 #### Find files greater than a particular size in linux
 ```
