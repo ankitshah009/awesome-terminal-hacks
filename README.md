@@ -197,6 +197,16 @@ ls *.WAV | awk '{ printf("mv \"%s\" \"%s\"\n", $0, tolower($0)) }'
 awk '{ print FNR ". " $0 ;next}{print}' file1
 ```
 
+#### Replace the Nth occurance of a string in vim -- very useful stuff
+```
+:%s/\(\zsPATTERN.\{-}\)\{N}/REPLACE/
+```
+
+#### Copy based on awk in vim -- you can basically copy with delimiters - useful
+```
+:%!awk '{print $0" "$1}'
+```
+
 #### Speed up listing of files in a path consisting of many many files. (difference noticable after 50k files with standard ls command) 
 ```
 ls -1f <your path>
