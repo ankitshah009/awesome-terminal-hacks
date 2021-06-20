@@ -11,3 +11,5 @@
 [Top tips to work faster on linux and productivity or programmers and developers](https://medium.com/javarevisited/top-10-unix-and-linux-productivity-tips-for-programmers-and-developers-c748129cf3e8)
 
 [Top 50 linux commands to know](https://www.journaldev.com/34067/linux-commands)
+
+[100 essential linux commands](https://linuxhint.com/100_essential_linux_commands/)
