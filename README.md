@@ -295,6 +295,11 @@ Generate a transfer.log file in /tmp for all the folders/files from a source pat
 cat /tmp/transfer.log | parallel --will-cite -j 5 rsync -avzm --progress --relative --stats --safe-links --ignore-existing --human-readable {} dest_host:/data/ 
 ```
 
+#### MacOS Homebrew upgrade - use brewski
+```
+alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
+```
+
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
