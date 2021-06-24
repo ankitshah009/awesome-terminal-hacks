@@ -191,6 +191,11 @@ awk -F":" '{$2="";$3="";print}' file1
 awk '/^[ \t]*$/{next}{print}' file1
 ```
 
+#### Get number of lines different between two files
+```
+diff -y --suppress-common-lines file1 file2 | wc -l
+```
+
 #### Get number of fields on each line in a file
 ```
 awk '{print NR,"-->",NF}' file1
