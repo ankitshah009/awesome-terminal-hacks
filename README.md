@@ -231,6 +231,11 @@ awk '{ print FNR ". " $0 ;next}{print}' file1
 :%!awk '{print $0" "$1}'
 ```
 
+#### Get full path of all files in a directory and dump to a file. 
+```
+find "$PWD" > filename
+```
+
 #### Speed up listing of files in a path consisting of many many files. (difference noticable after 50k files with standard ls command) 
 ```
 ls -1f <your path>
