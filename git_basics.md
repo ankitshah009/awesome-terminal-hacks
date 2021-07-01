@@ -307,6 +307,14 @@ Be careful using this
 git reset --hard HEAD~1
 ```
 
+#### Squash K commits into a single commit - replace 5 by k
+```
+git rebase -i HEAD~5git reset --soft HEAD~5
+git add .
+git commit -m "Update"
+git push -f origin master
+```
+
 #### Useful commands
 
 ```sh
