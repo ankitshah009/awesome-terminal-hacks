@@ -300,6 +300,13 @@ $ git diff --cached
 $ git diff --stat origin/master
 ```
 
+#### Undo last commit 
+Be careful using this
+
+```
+git reset --hard HEAD~1
+```
+
 #### Useful commands
 
 ```sh
@@ -336,3 +343,12 @@ To add an alias simply open your .gitconfig file on your home directory and incl
 # Shows the log in a more consisted way with the graph for branching and merging
 lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 ```
+
+#### Rename a tag 
+```
+git tag new old
+git tag -d old
+git push origin :refs/tags/old
+git push --tags
+```
+
