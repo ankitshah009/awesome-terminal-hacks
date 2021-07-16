@@ -17,3 +17,15 @@ scontrol show nodes
 ```
 sinfo -o "%10P %8c %8m %11G %5D %N"
 ```
+### Cancel job ids from slurm
+```
+scancel jobid
+```
+All users jobs
+```
+scancel -u USER
+```
+Pending jobs
+```
+scancel -t PD
+```
