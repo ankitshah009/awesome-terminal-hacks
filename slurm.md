@@ -29,3 +29,7 @@ Pending jobs
 ```
 scancel -t PD
 ```
+### See SLURM nodes features and capacity - individual output
+```
+sinfo -o "%20N %10c %10m  %20f  %10G" -N
+```
