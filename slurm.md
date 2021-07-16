@@ -7,3 +7,13 @@ for jobid in `squeue -u $USER | awk '{print $1}' | grep -v JOBID`; do echo $jobi
 ```
 sinfo -o "%20P %5D %3c %6m %G" | grep -v null
 ```
+
+### List all the Nodes including GRES 
+```
+scontrol show nodes
+```
+
+### Get information with specific params for all nodes on cluster
+```
+sinfo -o "%10P %8c %8m %11G %5D %N"
+```
