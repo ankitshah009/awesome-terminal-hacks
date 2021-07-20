@@ -71,6 +71,9 @@ tar cf - * | mbuffer -m 1024M | ssh user@host '(cd /home/path; tar xf -)'
 rsync -rltv --progress --human-readable --delete --iconv=utf-8-mac,utf-8 -e 'ssh -T -c aes128-gcm@openssh.com -o Compression=no -x' <local_mac_source> <remote_linux_dest>
 ```
 ```
+rsync -rtvvv --numeric-ids --delete --progress -e 'ssh -T -c aes128-gcm@openssh.com -o Compression=no -x'  <serve> <local>
+```
+```
 https://gist.github.com/KartikTalwar/4393116
 ```
 
