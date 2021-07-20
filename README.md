@@ -66,6 +66,15 @@ Note - read awk documentation to perform lots of crazy commmands based on the ab
 tar cf - * | mbuffer -m 1024M | ssh user@host '(cd /home/path; tar xf -)'
 ```
 
+#### Copy fast using rsync with OSX
+```
+rsync -rltv --progress --human-readable --delete --iconv=utf-8-mac,utf-8 -e 'ssh -T -c aes128-gcm@openssh.com -o Compression=no -x' <local_mac_source> <remote_linux_dest>
+```
+```
+https://gist.github.com/KartikTalwar/4393116
+```
+
+
 #### Extract wav audio files form an mp4 extension of video - crude way - more customization is possible. 
 ```
 for f in *.mp4;do ffmpeg -i "$f" "${f%mp4}wav";done
