@@ -13,3 +13,13 @@
 [Top 50 linux commands to know](https://www.journaldev.com/34067/linux-commands)
 
 [100 essential linux commands](https://linuxhint.com/100_essential_linux_commands/)
+
+### Create a password protected AES256 zip file on Macbook
+Prerequisites
+```
+brew update && brew install p7zip
+```
+Command
+```
+7za a -tzip '-pYOURPASSWORDHERE' -mem=AES256 filename.zip files
+```
