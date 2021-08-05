@@ -248,6 +248,11 @@ awk '{ print FNR ". " $0 ;next}{print}' file1
 find "$PWD" > filename
 ```
 
+#### Split a folder into k parts 
+```
+for i in `seq 1 k`; do mkdir -p "folder$i"; find . -type f -maxdepth 1 | head -n num_files_you_WANT | xargs -i mv "{}" "folder$i"; done
+```
+
 #### Speed up listing of files in a path consisting of many many files. (difference noticable after 50k files with standard ls command) 
 ```
 ls -1f <your path>
