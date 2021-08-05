@@ -248,6 +248,11 @@ awk '{ print FNR ". " $0 ;next}{print}' file1
 find "$PWD" > filename
 ```
 
+#### Copy a file k times 
+```
+for i in {1..k}; do cp file "file$i"; done
+```
+
 #### Split a folder into k parts 
 ```
 for i in `seq 1 k`; do mkdir -p "folder$i"; find . -type f -maxdepth 1 | head -n num_files_you_WANT | xargs -i mv "{}" "folder$i"; done
