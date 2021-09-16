@@ -14,6 +14,8 @@
 
 [100 essential linux commands](https://linuxhint.com/100_essential_linux_commands/)
 
+[Using Unix for Linguistic Research](https://wstyler.ucsd.edu/unix/)
+
 ### Create a password protected AES256 zip file on Macbook
 Prerequisites
 ```
