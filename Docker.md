@@ -95,3 +95,8 @@ OR
 docker exec -ti --env COLUMNS=`tput cols` --env LINES=`tput lines` container id bash
 ```
 
+### Get the information about the command arguments used to start container
+
+```
+docker inspect -f '{{ .Config.Env}} {{ .Config.Entrypoint}} {{ .Config.Cmd}} {{ .VolumesFrom}} {{.Volumes}}  {{ .HostConfig.links}}' container_id
+```
