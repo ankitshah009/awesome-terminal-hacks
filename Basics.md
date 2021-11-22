@@ -25,3 +25,13 @@ Command
 ```
 7za a -tzip '-pYOURPASSWORDHERE' -mem=AES256 filename.zip files
 ```
+
+### Get list of current active screens on account
+```
+#!/bin/bash
+num=$1
+echo $num
+sessdir=`screen -ls | sed -ne 's/.*Sockets* in \(.*\)\.$/\1/p'`
+newest=`ls -1t $sessdir | head -$num`
+echo $newest
+```
