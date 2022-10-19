@@ -332,6 +332,11 @@ cat /tmp/transfer.log | parallel --will-cite -j 5 rsync -avzm --progress --relat
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 ```
 
+#### Parallel Tutorial 
+```
+https://www.gnu.org/software/parallel/parallel_tutorial.html 
+```
+
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
