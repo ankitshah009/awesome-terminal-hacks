@@ -163,6 +163,11 @@ To ignore case of replacement
 sed 's/word1/word2/gi' file1
 ```
 
+### Rename all files in directory - Removes .wav for example in below
+```
+for i in `ls`; do echo $i; new_name=`echo $i | sed s/.wav//`; echo $new_name; mv $i $new_name; done
+```
+
 #### Replace word1 by word2 in a range in a file - example for 5-10 lines replacement
 ```
 sed '5,10 s/word1/word2/g' file1
