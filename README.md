@@ -77,6 +77,10 @@ rsync -rtvvv --numeric-ids --delete --progress -e 'ssh -T -c aes128-gcm@openssh.
 https://gist.github.com/KartikTalwar/4393116
 ```
 
+#### Copy k files from one folder to another (assumes you are running command from current folder)
+```
+find . -maxdepth 1 -type f | head -k | xargs cp -t <destination folder>
+```
 
 #### Extract wav audio files form an mp4 extension of video - crude way - more customization is possible. 
 ```
