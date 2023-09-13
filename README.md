@@ -351,6 +351,11 @@ https://www.gnu.org/software/parallel/parallel_tutorial.html
 ps -e -o user= | sort | uniq -c | sort -n
 ```
 
+#### List all open jobs from a user and kill all of them
+```
+ps -u username -o pid= | awk '{print $1}' | xargs -I {} kill -9 {}
+```
+
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
