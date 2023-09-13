@@ -346,6 +346,11 @@ alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 https://www.gnu.org/software/parallel/parallel_tutorial.html 
 ```
 
+#### Check commands from the current user that are running on machine
+```
+ps -e -o user= | sort | uniq -c | sort -n
+```
+
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
