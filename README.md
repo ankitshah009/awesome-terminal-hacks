@@ -355,6 +355,10 @@ ps -e -o user= | sort | uniq -c | sort -n
 ```
 ps -u username -o pid= | awk '{print $1}' | xargs -I {} kill -9 {}
 ```
+#### List number of files in directory and all its subdirectories 
+```
+for subdir in `ls`; do echo $subdir; ls $subdir/ | wc -l ; done
+```
 
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
