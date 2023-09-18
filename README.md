@@ -360,6 +360,11 @@ ps -u username -o pid= | awk '{print $1}' | xargs -I {} kill -9 {}
 for subdir in `ls`; do echo $subdir; ls $subdir/ | wc -l ; done
 ```
 
+### Screen scroll back 
+```
+echo 'termcapinfo xterm* ti@:te@' >> ~/.screenrc
+```
+
 # Note
 If you know a better way to do the tasks Or other tasks which can be added here -  kindly create a pull request for the repository.
 
