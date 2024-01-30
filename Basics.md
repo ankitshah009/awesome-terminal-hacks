@@ -35,3 +35,26 @@ sessdir=`screen -ls | sed -ne 's/.*Sockets* in \(.*\)\.$/\1/p'`
 newest=`ls -1t $sessdir | head -$num`
 echo $newest
 ```
+
+### Basic command and its information
+```
+grep: A powerful tool for searching text. It's used to search for a specific string or pattern within files. Example: grep 'pattern' filename.
+
+awk: Great for text processing, especially for manipulating data in files or streams. Example: awk '{print $1}' filename prints the first column of a file.
+
+sed: A stream editor that can perform basic text transformations on an input stream (a file or input from a pipeline). Example: sed 's/original/replacement/' filename replaces the first instance of 'original' with 'replacement' in each line of the file.
+
+find: Helps in searching for files in a directory hierarchy. Example: find / -name filename.txt searches for a file named filename.txt starting from the root directory.
+
+tar: Used for compressing and archiving files. Example: tar -czvf archive.tar.gz /path/to/directory creates a compressed archive of a directory.
+
+wget: A non-interactive network downloader. Useful for downloading files from the internet. Example: wget http://example.com/file.
+
+curl: Similar to wget, but with more features. It's used to transfer data from or to a server. Example: curl http://example.com.
+
+ps: Displays information about running processes. Example: ps -aux shows all running processes with detailed information.
+
+top: An interactive task manager that shows a real-time view of running processes.
+
+alias: Creates shortcuts for long commands. Example: alias ll='ls -la' creates an alias ll for ls -la.
+```
